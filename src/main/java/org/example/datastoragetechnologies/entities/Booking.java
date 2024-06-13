@@ -33,6 +33,7 @@ public class Booking {
     private String status;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
     public int getBookingId() {

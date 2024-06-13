@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.datastoragetechnologies.AddRequest"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.requests.other.AddRequest">
+    <Button layoutX="240.0" layoutY="252.0" onAction="#addRequest" prefHeight="30.0" prefWidth="120.0" text="Выполнить запрос" />
+    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0" text="Вернуться в меню" />
+    <TextField fx:id="phone" layoutX="154.0" layoutY="86.0" promptText="1234567">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </TextField>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="91.0" text="Номер телефона:" textAlignment="CENTER">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="142.0" text="Почта:" textAlignment="CENTER">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+   <TextField fx:id="mail" layoutX="154.0" layoutY="137.0" promptText="a@gc,com">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </TextField>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="36.0" text="Добавить клиента" textAlignment="CENTER">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="200.0" text="Фамилия:" textAlignment="CENTER">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <TextField fx:id="initials" layoutX="154.0" layoutY="195.0" promptText="Петров П. П.">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </TextField>
+   <Label fx:id="isSuccess" alignment="CENTER" contentDisplay="CENTER" layoutY="302.0" prefHeight="20.0" prefWidth="600.0" text="" textAlignment="CENTER">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
 </AnchorPane>

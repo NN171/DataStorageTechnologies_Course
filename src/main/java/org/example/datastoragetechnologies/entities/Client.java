@@ -2,6 +2,7 @@ package org.example.datastoragetechnologies.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -20,7 +21,7 @@ public class Client {
     private String email;
 
     @Column(name = "registration_date", nullable = false)
-    private Date registrationDate;
+    private LocalDate registrationDate;
 
     @Column(name = "full_name", nullable = false)
     private String fullName;
@@ -49,12 +50,12 @@ public class Client {
         this.email = email;
     }
 
-    public Date getRegistrationDate() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate() {
-        this.registrationDate = Calendar.getInstance().getTime();
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     public String getFullName() {

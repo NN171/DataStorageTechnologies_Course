@@ -2,13 +2,11 @@ package org.example.datastoragetechnologies.entities;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
-
 @Entity
 @Table(name = "employee")
 public class Employee {
     @Id
-    @Column(name = "employee_id", insertable=false)
+    @Column(name = "employee_id", insertable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
 

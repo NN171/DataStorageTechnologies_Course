@@ -84,7 +84,7 @@ public class HelloController {
         welcomeText.setText("Add Query");
         Stage stage = (Stage) welcomeText.getScene().getWindow();
         Parent root =
-                FXMLLoader.load(getClass().getResource("first-request.fxml"));
+                FXMLLoader.load(getClass().getResource("add-request.fxml"));
         stage.setTitle("Request7");
         stage.setScene(new Scene(root));
         stage.show();
@@ -95,7 +95,7 @@ public class HelloController {
         welcomeText.setText("Update Query");
         Stage stage = (Stage) welcomeText.getScene().getWindow();
         Parent root =
-                FXMLLoader.load(getClass().getResource("first-request.fxml"));
+                FXMLLoader.load(getClass().getResource("update-request.fxml"));
         stage.setTitle("Request8");
         stage.setScene(new Scene(root));
         stage.show();
@@ -106,7 +106,7 @@ public class HelloController {
         welcomeText.setText("Delete Query");
         Stage stage = (Stage) welcomeText.getScene().getWindow();
         Parent root =
-                FXMLLoader.load(getClass().getResource("first-request.fxml"));
+                FXMLLoader.load(getClass().getResource("delete-request.fxml"));
         stage.setTitle("Request9");
         stage.setScene(new Scene(root));
         stage.show();

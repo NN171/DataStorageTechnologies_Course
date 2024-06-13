@@ -11,4 +11,5 @@ module org.example.datastoragetechnologies {
     exports org.example.datastoragetechnologies;
     opens org.example.datastoragetechnologies.requests.aggregation to javafx.base, javafx.fxml;
     opens org.example.datastoragetechnologies.requests.search to javafx.base, javafx.fxml;
+    opens org.example.datastoragetechnologies.requests.other to javafx.base, javafx.fxml;
 }

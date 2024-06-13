@@ -7,7 +7,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.requests.aggregation.CountRequest">
     <Button layoutX="240.0" layoutY="263.0" onAction="#countRequest" prefHeight="30.0" prefWidth="120.0" text="Выполнить запрос" />
     <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0" text="Вернуться в меню" />
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="149.0" text="Количество товаров фирмы (?)" textAlignment="CENTER">
+    <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="149.0" text="Количество товаров фирмы (?)" textAlignment="CENTER">
         <font>
             <Font size="18.0" />
         </font>

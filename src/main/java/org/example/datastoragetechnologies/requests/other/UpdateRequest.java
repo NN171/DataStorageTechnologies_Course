@@ -1,4 +1,4 @@
-package org.example.datastoragetechnologies.requests.aggregation;
+package org.example.datastoragetechnologies.requests.other;
 
 import jakarta.persistence.Query;
 import javafx.application.Platform;
@@ -8,47 +8,48 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.datastoragetechnologies.HelloApplication;
 import org.example.datastoragetechnologies.HibernateRunner;
+import org.example.datastoragetechnologies.entities.Booking;
+import org.example.datastoragetechnologies.entities.Client;
 
 import java.io.IOException;
 
-public class CountRequest {
+public class UpdateRequest {
 
     @FXML
-    Label content;
+    TextField id;
 
     @FXML
-    Label label;
+    TextField status;
+
+    @FXML
+    Label isSuccess;
 
     @FXML
     Button menu;
 
-    @FXML
-    TextField input;
-
-    @FXML
-    CheckBox check;
-
-    public void countRequest() {
+    public void updateRequest() {
         Platform.runLater(() -> {
             HibernateRunner.session().inTransaction(session -> {
-                String textQuery = """
-                             SELECT COUNT(pr.productType) FROM Product pr
-                             INNER JOIN Booking bk ON pr.productId = bk.product.productId
-                             WHERE pr.producer = :producer AND bk.warranty = :isEnabled
+                String updateQuery = """
+                             UPDATE Booking bo
+                             SET status = :status
+                             WHERE bo.product.productId = :productId
                         """;
-                Query query = session.createQuery(textQuery, Long.class);
-                query.setParameter("producer", input.getText());
-                query.setParameter("isEnabled", check.isSelected());
-                long count = (long) query.getSingleResult();
 
-                label.setText(label.getText().substring(0, 24) + " " + input.getText());
-                content.setText(count + " штук");
+                Query query = session.createQuery(updateQuery);
+                query.setParameter("status", status.getText());
+                query.setParameter("productId", Integer.parseInt(id.getText()));
+                int result = query.executeUpdate();
+
+                if (result != 0)
+                    isSuccess.setText("Статус заказа " + id.getText() + " изменен");
+                else
+                    isSuccess.setText("Заказ отсутствует в базе");
             });
         });
     }
