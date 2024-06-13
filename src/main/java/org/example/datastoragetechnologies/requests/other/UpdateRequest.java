@@ -13,8 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.datastoragetechnologies.HelloApplication;
 import org.example.datastoragetechnologies.HibernateRunner;
-import org.example.datastoragetechnologies.entities.Booking;
-import org.example.datastoragetechnologies.entities.Client;
 
 import java.io.IOException;
 

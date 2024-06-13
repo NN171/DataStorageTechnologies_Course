@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.datastoragetechnologies.HelloApplication;
 import org.example.datastoragetechnologies.HibernateRunner;
-import org.example.datastoragetechnologies.entities.Client;
 import org.example.datastoragetechnologies.entities.Employee;
 
 import java.io.IOException;
@@ -43,15 +42,14 @@ public class DeleteRequest {
 
                 if (amount > 0) {
                     String checkQuery = """
-                                FROM Employee
-                                WHERE employeeId = :employeeId
-                         """;
+                                   FROM Employee
+                                   WHERE employeeId = :employeeId
+                            """;
                     Query isDeleted = session.createQuery(checkQuery, Employee.class)
                             .setParameter("employeeId", Integer.parseInt(id.getText()));
                     if (isDeleted.getResultList().isEmpty())
                         isSuccess.setText("Сотрудник успешно удален");
-                }
-                else isSuccess.setText("Сотрудник отсутствует в базе");
+                } else isSuccess.setText("Сотрудник отсутствует в базе");
             });
         });
     }

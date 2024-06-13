@@ -3,6 +3,7 @@ package org.example.datastoragetechnologies.requests.search;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +18,6 @@ import org.example.datastoragetechnologies.HelloApplication;
 import org.example.datastoragetechnologies.HibernateRunner;
 import org.example.datastoragetechnologies.entities.Product;
 import org.hibernate.SessionFactory;
-import javafx.event.ActionEvent;
 
 import java.io.IOException;
 import java.net.URL;

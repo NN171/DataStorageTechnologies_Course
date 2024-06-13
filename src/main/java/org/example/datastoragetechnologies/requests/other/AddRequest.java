@@ -1,6 +1,5 @@
 package org.example.datastoragetechnologies.requests.other;
 
-import jakarta.persistence.NonUniqueResultException;
 import jakarta.persistence.Query;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -53,17 +52,16 @@ public class AddRequest {
 
                 try {
                     String checkQuery = """
-                                FROM Client 
-                                WHERE phoneNumber = :phone AND email = :mail AND fullName = :initials 
-                         """;
+                                   FROM Client 
+                                   WHERE phoneNumber = :phone AND email = :mail AND fullName = :initials 
+                            """;
                     session.createQuery(checkQuery, Client.class)
                             .setParameter("phone", phone.getText())
                             .setParameter("mail", mail.getText())
                             .setParameter("initials", initials.getText())
                             .uniqueResult();
                     isSuccess.setText("Клиент добавлен");
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     isSuccess.setText("Клиент уже существует");
                 }
             });
