@@ -63,4 +63,15 @@ public class Employee {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", post='" + post + '\'' +
+                ", fullName='" + fullName + '\'' +
+                '}';
+    }
 }

@@ -20,7 +20,6 @@ public class Client {
     private String email;
 
     @Column(name = "registration_date", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private Date registrationDate;
 
     @Column(name = "full_name", nullable = false)
@@ -64,5 +63,16 @@ public class Client {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "clientId=" + clientId +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", registrationDate=" + registrationDate +
+                ", fullName='" + fullName + '\'' +
+                '}';
     }
 }

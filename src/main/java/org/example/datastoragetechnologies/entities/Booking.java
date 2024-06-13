@@ -19,11 +19,11 @@ public class Booking {
     private Client client;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "employee_id", nullable = false)
+    @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
     @Column(nullable = false)
@@ -33,7 +33,6 @@ public class Booking {
     private String status;
 
     @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
     public int getBookingId() {
