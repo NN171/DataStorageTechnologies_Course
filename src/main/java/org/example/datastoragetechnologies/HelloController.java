@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import org.example.datastoragetechnologies.requests.FirstRequest;
 
 import java.io.IOException;
 
@@ -52,7 +51,7 @@ public class HelloController {
         welcomeText.setText("Count Query");
         Stage stage = (Stage) welcomeText.getScene().getWindow();
         Parent root =
-                FXMLLoader.load(getClass().getResource("first-request.fxml"));
+                FXMLLoader.load(getClass().getResource("count-request.fxml"));
         stage.setTitle("Request4");
         stage.setScene(new Scene(root));
         stage.show();
@@ -63,7 +62,7 @@ public class HelloController {
         welcomeText.setText("Avg Query");
         Stage stage = (Stage) welcomeText.getScene().getWindow();
         Parent root =
-                FXMLLoader.load(getClass().getResource("first-request.fxml"));
+                FXMLLoader.load(getClass().getResource("avg-request.fxml"));
         stage.setTitle("Request5");
         stage.setScene(new Scene(root));
         stage.show();
@@ -74,7 +73,7 @@ public class HelloController {
         welcomeText.setText("Sum Query");
         Stage stage = (Stage) welcomeText.getScene().getWindow();
         Parent root =
-                FXMLLoader.load(getClass().getResource("first-request.fxml"));
+                FXMLLoader.load(getClass().getResource("sum-request.fxml"));
         stage.setTitle("Request6");
         stage.setScene(new Scene(root));
         stage.show();

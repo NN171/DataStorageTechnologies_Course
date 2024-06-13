@@ -1,4 +1,4 @@
-package org.example.datastoragetechnologies.requests;
+package org.example.datastoragetechnologies.requests.search;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;

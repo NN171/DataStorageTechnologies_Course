@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "booking_execution")
-public class Booking_execution {
+public class BookingExecution {
     @Id
     @Column(insertable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class Booking_execution {
     @JoinColumn(name = "booking_id", nullable = false)
     private Booking booking;
 
-    @Column(nullable = false)
+    @Column(name = "repair_cost", nullable = false)
     private double repairCost;
 
     @Column(nullable = false)

@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.datastoragetechnologies.CountRequest"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.requests.aggregation.CountRequest">
+    <Button layoutX="240.0" layoutY="263.0" onAction="#countRequest" prefHeight="30.0" prefWidth="120.0" text="Выполнить запрос" />
+    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0" text="Вернуться в меню" />
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="149.0" text="Количество товаров фирмы (?)" textAlignment="CENTER">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <Label fx:id="content" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="248.0" layoutY="210.0" prefHeight="27.0" prefWidth="104.0" text="0" textAlignment="CENTER">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+   <TextField fx:id="input" layoutX="193.0" layoutY="52.0" promptText="Производитель">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </TextField>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="57.0" text="Введите производителя:" textAlignment="CENTER">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <CheckBox fx:id="check" layoutX="156.0" layoutY="100.0" mnemonicParsing="false" />
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="98.0" text="Наличие гарантии" textAlignment="CENTER">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
 </AnchorPane>

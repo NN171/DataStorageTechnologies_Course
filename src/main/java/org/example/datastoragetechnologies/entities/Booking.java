@@ -10,7 +10,7 @@ import java.util.Date;
 @Table(name = "booking")
 public class Booking {
     @Id
-    @Column(insertable=false)
+    @Column(name = "booking_id", insertable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 

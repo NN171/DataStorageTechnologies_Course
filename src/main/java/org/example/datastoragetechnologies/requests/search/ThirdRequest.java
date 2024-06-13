@@ -1,4 +1,4 @@
-package org.example.datastoragetechnologies.requests;
+package org.example.datastoragetechnologies.requests.search;
 
 import jakarta.persistence.Query;
 import javafx.application.Platform;
