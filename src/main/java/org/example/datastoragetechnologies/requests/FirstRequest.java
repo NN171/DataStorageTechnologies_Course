@@ -59,13 +59,13 @@ public class FirstRequest implements Initializable {
                          ORDER BY fullName DESC
                         """;
 
-                List<FirstDescribe> krupnolistovoy = new ArrayList<>();
+                List<FirstDescribe> describeList = new ArrayList<>();
                 List<Object> list = session.createQuery(textQuery).getResultList();
                 for (Object o : list) {
                     Object[] row = (Object[]) o;
-                    krupnolistovoy.add(new FirstDescribe((String) row[0], (String) row[1], (String) row[2]));
+                    describeList.add(new FirstDescribe((String) row[0], (String) row[1], (String) row[2]));
                 }
-                ObservableList<FirstDescribe> observe = FXCollections.observableList(krupnolistovoy);
+                ObservableList<FirstDescribe> observe = FXCollections.observableList(describeList);
                 table.setItems(observe);
             });
         });

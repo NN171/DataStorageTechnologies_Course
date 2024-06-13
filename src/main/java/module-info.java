@@ -7,7 +7,7 @@ module org.example.datastoragetechnologies {
 
 
     opens org.example.datastoragetechnologies.requests to javafx.fxml, javafx.base;
-    opens org.example.datastoragetechnologies.entities to org.hibernate.orm.core;
+    opens org.example.datastoragetechnologies.entities to org.hibernate.orm.core, javafx.base;
 
 
     opens org.example.datastoragetechnologies to javafx.fxml;
