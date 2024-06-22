@@ -19,10 +19,19 @@ import java.io.IOException;
 public class UpdateRequest {
 
     @FXML
-    TextField id;
+    TextField phone;
 
     @FXML
-    TextField status;
+    TextField mail;
+
+    @FXML
+    TextField post;
+
+    @FXML
+    TextField initials;
+
+    @FXML
+    TextField id;
 
     @FXML
     Label isSuccess;
@@ -33,23 +42,58 @@ public class UpdateRequest {
     public void updateRequest() {
         Platform.runLater(() -> {
             HibernateRunner.session().inTransaction(session -> {
-                String updateQuery = """
-                             UPDATE Booking bo
-                             SET status = :status
-                             WHERE bo.product.productId = :productId
-                        """;
+                try {
+                    String idEmployee = id.getText();
+                    if (idEmployee.isEmpty()) {
+                        throw new IllegalArgumentException();
+                    }
 
-                Query query = session.createQuery(updateQuery);
-                query.setParameter("status", status.getText());
-                query.setParameter("productId", Integer.parseInt(id.getText()));
-                int result = query.executeUpdate();
+                    StringBuilder updateQuery = getStringBuilder();
 
-                if (result != 0)
-                    isSuccess.setText("Статус заказа " + id.getText() + " изменен");
-                else
-                    isSuccess.setText("Заказ отсутствует в базе");
+                    Query query = session.createQuery(updateQuery.toString());
+                    if (!phone.getText().isBlank())
+                        query.setParameter("phone", phone.getText());
+                    if (!mail.getText().isBlank())
+                        query.setParameter("mail", mail.getText());
+                    if (!post.getText().isBlank())
+                        query.setParameter("post", post.getText());
+                    if (!initials.getText().isBlank())
+                        query.setParameter("initials", initials.getText());
+                    query.setParameter("idEmployee", Integer.parseInt(id.getText()));
+                    int result = query.executeUpdate();
+
+                    if (result != 0)
+                        isSuccess.setText("Информация о сотруднике " + id.getText() + " была изменена");
+                    else
+                        isSuccess.setText("Сотрудник отсутствует в базе");
+                }
+                catch (Exception e) {
+                    isSuccess.setText("Произошла ошибка изменения информации о сотруднике");
+                }
             });
         });
+    }
+
+    private StringBuilder getStringBuilder() {
+        StringBuilder updateQuery = new StringBuilder("UPDATE Employee " +
+                     "SET ");
+
+        if (!phone.getText().isBlank())
+            updateQuery.append("phoneNumber = :phone, ");
+        if (!mail.getText().isBlank())
+            updateQuery.append("email = :mail, ");
+        if (!post.getText().isBlank())
+            updateQuery.append("post = :post, ");
+        if (!initials.getText().isBlank())
+            updateQuery.append("fullName = :initials");
+
+        if (updateQuery.substring(updateQuery.length() - 2).equals(", ")) {
+            updateQuery.deleteCharAt(updateQuery.length() - 1);
+            updateQuery.deleteCharAt(updateQuery.length() - 1);
+        }
+
+        updateQuery.append(" WHERE employeeId = :idEmployee");
+        return updateQuery;
     }
 
     @FXML
