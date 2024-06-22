@@ -36,20 +36,24 @@ public class DeleteRequest {
                              WHERE employeeId = :employeeId
                         """;
 
-                Query query = session.createQuery(addQuery);
-                query.setParameter("employeeId", Integer.parseInt(id.getText()));
-                int amount = query.executeUpdate();
+                try {
+                    Query query = session.createQuery(addQuery);
+                    query.setParameter("employeeId", Integer.parseInt(id.getText()));
+                    int amount = query.executeUpdate();
 
-                if (amount > 0) {
-                    String checkQuery = """
-                                   FROM Employee
-                                   WHERE employeeId = :employeeId
-                            """;
-                    Query isDeleted = session.createQuery(checkQuery, Employee.class)
-                            .setParameter("employeeId", Integer.parseInt(id.getText()));
-                    if (isDeleted.getResultList().isEmpty())
-                        isSuccess.setText("Сотрудник успешно удален");
-                } else isSuccess.setText("Сотрудник отсутствует в базе");
+                    if (amount != 0) {
+                        String checkQuery = """
+                                       FROM Employee
+                                       WHERE employeeId = :employeeId
+                                """;
+                        Query isDeleted = session.createQuery(checkQuery, Employee.class)
+                                .setParameter("employeeId", Integer.parseInt(id.getText()));
+                        if (isDeleted.getResultList().isEmpty())
+                            isSuccess.setText("Сотрудник успешно удален");
+                    } else isSuccess.setText("Сотрудник отсутствует в базе");
+                } catch (Exception e) {
+                    isSuccess.setText("Сотрудник привязан к заказу");
+                }
             });
         });
     }
