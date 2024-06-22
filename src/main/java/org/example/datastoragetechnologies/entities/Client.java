@@ -3,14 +3,12 @@ package org.example.datastoragetechnologies.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 
 @Entity
 @Table(name = "client")
 public class Client {
     @Id
-    @Column(name = "client_id", insertable=false)
+    @Column(name = "client_id", insertable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int clientId;
 

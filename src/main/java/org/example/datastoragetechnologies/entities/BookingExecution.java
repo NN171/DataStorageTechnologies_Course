@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Table(name = "booking_execution")
 public class BookingExecution {
     @Id
-    @Column(insertable=false)
+    @Column(insertable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int operationId;
 

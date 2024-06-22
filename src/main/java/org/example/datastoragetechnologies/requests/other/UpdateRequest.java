@@ -66,8 +66,7 @@ public class UpdateRequest {
                         isSuccess.setText("Информация о сотруднике " + id.getText() + " была изменена");
                     else
                         isSuccess.setText("Сотрудник отсутствует в базе");
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     isSuccess.setText("Произошла ошибка изменения информации о сотруднике");
                 }
             });
@@ -76,7 +75,7 @@ public class UpdateRequest {
 
     private StringBuilder getStringBuilder() {
         StringBuilder updateQuery = new StringBuilder("UPDATE Employee " +
-                     "SET ");
+                "SET ");
 
         if (!phone.getText().isBlank())
             updateQuery.append("phoneNumber = :phone, ");

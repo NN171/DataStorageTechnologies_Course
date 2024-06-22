@@ -13,11 +13,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.datastoragetechnologies.HelloApplication;
 import org.example.datastoragetechnologies.HibernateRunner;
-import org.example.datastoragetechnologies.entities.Client;
 import org.example.datastoragetechnologies.entities.Employee;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 public class AddRequest {
 
@@ -43,22 +41,22 @@ public class AddRequest {
         Platform.runLater(() -> {
             HibernateRunner.session().inTransaction(session -> {
 
-                    String checkQuery = """
-                                   FROM Employee
-                                   WHERE phoneNumber = :phone AND email = :mail AND post = :post AND fullName = :initials 
-                            """;
-                    long records = session.createQuery(checkQuery, Employee.class)
-                            .setParameter("phone", phone.getText())
-                            .setParameter("mail", mail.getText())
-                            .setParameter("post", post.getText())
-                            .setParameter("initials", initials.getText())
-                            .getResultCount();
-
-                    if (records != 1) {
-                    String addQuery = """
-                             INSERT INTO Employee (phoneNumber, email, post, fullName)
-                             VALUES (:phone, :mail, :post, :initials)
+                String checkQuery = """
+                               FROM Employee
+                               WHERE phoneNumber = :phone AND email = :mail AND post = :post AND fullName = :initials 
                         """;
+                long records = session.createQuery(checkQuery, Employee.class)
+                        .setParameter("phone", phone.getText())
+                        .setParameter("mail", mail.getText())
+                        .setParameter("post", post.getText())
+                        .setParameter("initials", initials.getText())
+                        .getResultCount();
+
+                if (records != 1) {
+                    String addQuery = """
+                                 INSERT INTO Employee (phoneNumber, email, post, fullName)
+                                 VALUES (:phone, :mail, :post, :initials)
+                            """;
 
                     Query query = session.createQuery(addQuery);
                     query.setParameter("phone", phone.getText());

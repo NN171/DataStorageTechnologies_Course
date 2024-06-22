@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.requests.other.DeleteRequest">
-    <Button layoutX="240.0" layoutY="185.0" onAction="#deleteRequest" prefHeight="30.0" prefWidth="120.0" text="Выполнить запрос" />
-    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0" text="Вернуться в меню" />
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.datastoragetechnologies.requests.other.DeleteRequest">
+    <Button layoutX="240.0" layoutY="185.0" onAction="#deleteRequest" prefHeight="30.0" prefWidth="120.0"
+            text="Выполнить запрос"/>
+    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0"
+            text="Вернуться в меню"/>
     <TextField fx:id="id" layoutX="240.0" layoutY="111.0" promptText="1234567">
         <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
         </font>
     </TextField>
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="116.0" text="Иденфтификатор сотрудника:" textAlignment="CENTER">
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="116.0" text="Иденфтификатор сотрудника:"
+           textAlignment="CENTER">
         <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
         </font>
     </Label>
-    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="36.0" text="Удалить клиента" textAlignment="CENTER">
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="36.0" text="Удалить клиента"
+           textAlignment="CENTER">
         <font>
-            <Font size="18.0" />
+            <Font size="18.0"/>
         </font>
     </Label>
-    <Label fx:id="isSuccess" alignment="CENTER" contentDisplay="CENTER" layoutY="215.0" prefHeight="20.0" prefWidth="600.0" text="" textAlignment="CENTER">
+    <Label fx:id="isSuccess" alignment="CENTER" contentDisplay="CENTER" layoutY="215.0" prefHeight="20.0"
+           prefWidth="600.0" text="" textAlignment="CENTER">
         <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
         </font>
     </Label>
 </AnchorPane>
