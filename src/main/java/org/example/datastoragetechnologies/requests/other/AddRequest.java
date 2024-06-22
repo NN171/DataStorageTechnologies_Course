@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import org.example.datastoragetechnologies.HelloApplication;
 import org.example.datastoragetechnologies.HibernateRunner;
 import org.example.datastoragetechnologies.entities.Client;
+import org.example.datastoragetechnologies.entities.Employee;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -33,36 +34,42 @@ public class AddRequest {
     TextField initials;
 
     @FXML
+    TextField post;
+
+    @FXML
     Button menu;
 
     public void addRequest() {
         Platform.runLater(() -> {
             HibernateRunner.session().inTransaction(session -> {
-                String addQuery = """
-                             INSERT INTO Client (phoneNumber, email, registrationDate, fullName)
-                             VALUES (:phone, :mail, :date, :initials)
-                        """;
 
-                Query query = session.createQuery(addQuery);
-                query.setParameter("phone", phone.getText());
-                query.setParameter("mail", mail.getText());
-                query.setParameter("date", LocalDate.now());
-                query.setParameter("initials", initials.getText());
-                query.executeUpdate();
-
-                try {
                     String checkQuery = """
-                                   FROM Client 
-                                   WHERE phoneNumber = :phone AND email = :mail AND fullName = :initials 
+                                   FROM Employee
+                                   WHERE phoneNumber = :phone AND email = :mail AND post = :post AND fullName = :initials 
                             """;
-                    session.createQuery(checkQuery, Client.class)
+                    long records = session.createQuery(checkQuery, Employee.class)
                             .setParameter("phone", phone.getText())
                             .setParameter("mail", mail.getText())
+                            .setParameter("post", post.getText())
                             .setParameter("initials", initials.getText())
-                            .uniqueResult();
-                    isSuccess.setText("Клиент добавлен");
-                } catch (Exception e) {
-                    isSuccess.setText("Клиент уже существует");
+                            .getResultCount();
+
+                    if (records != 1) {
+                    String addQuery = """
+                             INSERT INTO Employee (phoneNumber, email, post, fullName)
+                             VALUES (:phone, :mail, :post, :initials)
+                        """;
+
+                    Query query = session.createQuery(addQuery);
+                    query.setParameter("phone", phone.getText());
+                    query.setParameter("mail", mail.getText());
+                    query.setParameter("post", post.getText());
+                    query.setParameter("initials", initials.getText());
+                    query.executeUpdate();
+
+                    isSuccess.setText("Сотрудник добавлен");
+                } else {
+                    isSuccess.setText("Сотрудник уже существует");
                 }
             });
         });
