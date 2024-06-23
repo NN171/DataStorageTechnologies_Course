@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.datastoragetechnologies.requests.search.SecondRequest">
-    <Button layoutX="240.0" layoutY="25.0" onAction="#secondRequest" prefHeight="30.0" prefWidth="120.0"
-            text="Выполнить запрос"/>
-    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0"
-            text="Вернуться в меню"/>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.requests.search.SecondRequest">
+    <Button layoutX="240.0" layoutY="345.0" onAction="#secondRequest" prefHeight="30.0" prefWidth="120.0" text="Выполнить запрос" />
+    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0" text="Вернуться в меню" />
     <TableView fx:id="table" layoutX="150.0" layoutY="72.0" prefHeight="256.0" prefWidth="300.0">
         <columns>
-            <TableColumn fx:id="first_col" prefWidth="75.0" text="ID клиента"/>
-            <TableColumn fx:id="second_col" prefWidth="225.0" text="Тип товара"/>
+            <TableColumn fx:id="first_col" prefWidth="75.0" text="ID клиента" />
+            <TableColumn fx:id="second_col" prefWidth="225.0" text="Тип товара" />
         </columns>
     </TableView>
+   <Label alignment="CENTER" layoutY="29.0" prefHeight="17.0" prefWidth="600.0" text="Запрос на поиск ID клиента и его товаров">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
 </AnchorPane>

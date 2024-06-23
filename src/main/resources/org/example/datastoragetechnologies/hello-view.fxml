@@ -1,52 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.HelloController">
-    <Label fx:id="welcomeText"/>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.HelloController">
+    <Label fx:id="welcomeText" />
     <Group>
-        <Text layoutX="74.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search queries">
+        <Text layoutX="59.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Запросы на поиск">
             <font>
-                <Font size="16.0"/>
+                <Font size="16.0" />
             </font>
         </Text>
-        <Button layoutX="70.0" layoutY="108.0" onAction="#firstOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Query 1"/>
-        <Button layoutX="70.0" layoutY="189.0" onAction="#secondOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Query 2"/>
-        <Button layoutX="70.0" layoutY="270.0" onAction="#thirdOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Query 3"/>
+        <Button layoutX="70.0" layoutY="108.0" onAction="#firstOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Запрос 1" />
+        <Button layoutX="70.0" layoutY="189.0" onAction="#secondOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Запрос 2" />
+        <Button layoutX="70.0" layoutY="270.0" onAction="#thirdOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Запрос 3" />
     </Group>
 
     <Group>
-        <Text layoutX="238.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregation queries">
+        <Text layoutX="214.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Агрегационные запросы">
             <font>
-                <Font size="16.0"/>
+                <Font size="16.0" />
             </font>
         </Text>
-        <Button layoutX="250.0" layoutY="270.0" onAction="#countQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Count Query"/>
-        <Button layoutX="250.0" layoutY="108.0" onAction="#avgQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Avg Query"/>
-        <Button layoutX="250.0" layoutY="189.0" onAction="#sumQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Sum Query"/>
+        <Button layoutX="250.0" layoutY="270.0" onAction="#countQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Запрос COUNT" />
+        <Button layoutX="250.0" layoutY="108.0" onAction="#avgQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Запрос AVG" />
+        <Button layoutX="250.0" layoutY="189.0" onAction="#sumQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Запрос SUM" />
     </Group>
 
     <Group>
-        <Text layoutX="434.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other queries">
+        <Text layoutX="426.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Другие запросы">
             <font>
-                <Font size="16.0"/>
+                <Font size="16.0" />
             </font>
         </Text>
-        <Button layoutX="430.0" layoutY="108.0" onAction="#addQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Add"/>
-        <Button layoutX="430.0" layoutY="270.0" onAction="#updateOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Update"/>
-        <Button layoutX="430.0" layoutY="189.0" onAction="#deleteOnButtonClick" prefHeight="30.0" prefWidth="110.0"
-                text="Delete"/>
+        <Button layoutX="430.0" layoutY="108.0" onAction="#addQueryOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Добавление" />
+        <Button layoutX="430.0" layoutY="270.0" onAction="#updateOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Обновление" />
+        <Button layoutX="430.0" layoutY="189.0" onAction="#deleteOnButtonClick" prefHeight="30.0" prefWidth="110.0" text="Удаление" />
     </Group>
 
 </AnchorPane>

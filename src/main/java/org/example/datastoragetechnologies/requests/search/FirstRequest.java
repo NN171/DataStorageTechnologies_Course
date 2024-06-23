@@ -84,19 +84,19 @@ public class FirstRequest implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         first_col.setCellValueFactory(new PropertyValueFactory<>("fullName"));
-        second_col.setCellValueFactory(new PropertyValueFactory<>("model"));
-        third_col.setCellValueFactory(new PropertyValueFactory<>("productType"));
+        second_col.setCellValueFactory(new PropertyValueFactory<>("productType"));
+        third_col.setCellValueFactory(new PropertyValueFactory<>("model"));
     }
 
     protected class FirstDescribe {
         private String fullName;
-        private String model;
         private String productType;
+        private String model;
 
         public FirstDescribe(String fullName, String model, String productType) {
             this.fullName = fullName;
-            this.model = model;
             this.productType = productType;
+            this.model = model;
         }
 
         public String getFullName() {

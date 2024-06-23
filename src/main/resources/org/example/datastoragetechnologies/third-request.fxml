@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.datastoragetechnologies.requests.search.ThirdRequest">
-    <Button layoutX="50.0" layoutY="28.0" onAction="#thirdRequest" prefHeight="30.0" prefWidth="176.0"
-            text="Выполнить запрос"/>
-    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0"
-            text="Вернуться в меню"/>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.datastoragetechnologies.requests.search.ThirdRequest">
+    <Button layoutX="212.0" layoutY="345.0" onAction="#thirdRequest" prefHeight="30.0" prefWidth="176.0" text="Выполнить запрос" />
+    <Button fx:id="menu" layoutX="10.0" layoutY="345.0" onAction="#menuReturn" prefHeight="30.0" prefWidth="120.0" text="Вернуться в меню" />
     <TableView fx:id="table" layoutX="50.0" layoutY="72.0" prefHeight="256.0" prefWidth="500.0">
         <columns>
-            <TableColumn fx:id="first_col" prefWidth="60.0" text="ID"/>
-            <TableColumn fx:id="second_col" prefWidth="120" text="Номер телефона"/>
-            <TableColumn fx:id="third_col" prefWidth="80.0" text="Почта"/>
-            <TableColumn fx:id="fourth_col" prefWidth="120.0" text="Дата регистрации"/>
-            <TableColumn fx:id="fifth_col" prefWidth="120.0" text="Фамилия И. О."/>
+            <TableColumn fx:id="first_col" prefWidth="60.0" text="ID" />
+            <TableColumn fx:id="second_col" prefWidth="120" text="Номер телефона" />
+            <TableColumn fx:id="third_col" prefWidth="80.0" text="Почта" />
+            <TableColumn fx:id="fourth_col" prefWidth="120.0" text="Дата регистрации" />
+            <TableColumn fx:id="fifth_col" prefWidth="120.0" text="Фамилия И. О." />
         </columns>
     </TableView>
-    <TextField fx:id="idField" layoutX="255.0" layoutY="31.0" prefHeight="25.0" prefWidth="295.0"
-               promptText="ID клиента"/>
+    <TextField fx:id="idField" layoutX="475.0" layoutY="35.0" prefHeight="25.0" prefWidth="76.0" promptText="ID клиента" />
+   <Label layoutX="47.0" layoutY="34.0" prefHeight="27.0" prefWidth="428.0" text="Поиск информации о клиенте с идентификатором:">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
 </AnchorPane>
