@@ -35,4 +35,60 @@ public class Booking {
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
+
+    public int getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public boolean isWarranty() {
+        return warranty;
+    }
+
+    public void setWarranty(boolean warranty) {
+        this.warranty = warranty;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate() {
+        this.creationDate = Calendar.getInstance().getTime();
+    }
 }
